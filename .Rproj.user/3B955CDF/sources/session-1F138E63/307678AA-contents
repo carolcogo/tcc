@@ -1,0 +1,174 @@
+---
+title: "Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional"
+subtitle: "TCC A "
+author: "Caroline Cogo Carneosso <br> Orientador Prof. Thiago A. N. De Andrade"
+institute: "Universidade Federal de Santa Maria <br/> Departamento de Estatística"
+date: '`r format(Sys.Date(), "%A, %d de %B de %Y")`'
+header-includes:
+   - \usepackage[brazil]{babel}
+   - \usepackage{bm}
+   - \usepackage{float}
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    #css: ["rladies", "rladies-fonts"]
+    lib_dir: libs # pasta onde colocará bibliotecas necessárias
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+toc: True
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(mypdf1)
+library(cowplot)
+options(digits = 3)
+
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+#install.packages("RefManageR")
+#install.packages("bibtex")
+
+library(RefManageR)
+RefManageR::BibOptions(
+  check.entries = FALSE,
+  style = "markdown",
+  cite.style = "authoryear",
+  bib.style = "authoryear"
+)
+referencias <- RefManageR::ReadBib("bib.bib", check = FALSE)
+```
+
+
+# Proposição de novas distribuições baseadas em geradores
+```{r}
+
+## Aqui, você deve falar sobre os vários geradores: Exp-G, beta-G, Gama-G, EG-G e, mais recentemente ERF-G Zea e Andrade 2020 -->
+
+
+```
+
+
+1.**Gamma-G**
+
+$$ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
+\frac{1}{\Gamma(a)} \int_0^{-\log \left[1-G(x)\right]} t^{a-1} \exp (-t)dt.$$
+
+para $a>0$, onde $\Gamma(a)=\int_0^\infty t^{a-1}\,\rm{e}^{-t}dt$ é a função gama
+e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompleta.
+
+
+
+2.**EG-G**
+
+---
+
+# Proposição de novas distribuições baseadas em geradores 
+
+3.**Beta-G**
+
+
+4.**Exp-G**
+
+
+$$F(x)=\left[1-\left\{1-G(x)\right\}^\alpha\right]^\beta.$$
+
+onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
+
+
+---
+# Função
+$$
+F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right].
+$$
+
+Onde $G(x)$ é uma função de distribuição acumulada (fda).
+
+---
+# A nova classe ERF-G e suas vantagens
+
+E mais recentemente, introduzida por `r RefManageR::Cite(referencias, "fernandez2020erf")`, a família erf-G
+
+
+A função erro é dada por 
+
+\begin{equation}\label{erf}
+\text{erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.
+\end{equation}
+
+
+
+densidade ok
+acumulada
+vantagens
+exemplo da exponencial (gráfico)
+
+---
+# Equações
+Now, let $X\sim$ erf-G $(\boldsymbol{\theta})$ for $\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p$, where $\boldsymbol{\Theta}$ represents the parametric space. The pdf of $X$ and hrf are given by, respectively, (for $x \in \mathbb{R}$)
+
+
+\begin{equation}\label{pdfF}
+f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}
+\end{equation}
+
+and
+
+$$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.$$
+
+---
+# Novos modelos a serem explorados
+* Erf-Wei
+
+* Erf-Normal
+
+* Erf-
+
+---
+# Erf-Weibull
+
+Adding concavity in the likelihood of Weibull distribution: a new
+model with bathtub hazard function
+
+Função de distribuição acumulada 
+
+$F(x)=\text{Erf}\left[\exp\left(\alpha x^\beta\right)-1\right].$
+
+Função de densidade de probabilidade
+
+$f(x)=2\pi^{-1/2}\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}.$
+
+Função de taxa de falha 
+
+$$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.$$
+
+gráficos
+
+---
+# Resultados aplicados
+- pacote
+- Apresentar uma aplicação
+
+---
+# Referências
+
+Segundo o `r RefManageR::TextCite(referencias, "r")`...
+
+O pacote usethis é muito legal `r RefManageR::Cite(referencias, "rstudio")`...
+
+```{r refs, echo=FALSE, results="asis"}
+RefManageR::PrintBibliography(referencias)
+```
+
+---
+class: center, middle
+
+# Obrigada pela atenção!
+

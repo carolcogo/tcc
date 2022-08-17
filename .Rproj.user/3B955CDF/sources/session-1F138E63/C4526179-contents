@@ -1,0 +1,80 @@
+---
+title: "Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional"
+subtitle: "TCC A "
+author: "Caroline Cogo Carneosso <br> Orientador Prof. Thiago A. N. De Andrade"
+institute: "Universidade Federal de Santa Maria <br/> Departamento de Estatística"
+format: 
+    revealjs:
+        theme: default
+        preview-links: auto
+        chalkboard: true
+        transition: fade
+        controls: true
+        width: 1110
+        height: 720
+
+---
+
+
+# slide que separa
+
+## Sumário
+
+::: {.incremental}
+- Introdução
+
+<br />
+
+- Desenvolvimento
+
+
+<br />
+
+- Conclusões
+:::
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(mypdf1)
+library(cowplot)
+options(digits = 3)
+
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+#install.packages("RefManageR")
+#install.packages("bibtex")
+
+library(RefManageR)
+RefManageR::BibOptions(
+  check.entries = FALSE,
+  style = "markdown",
+  cite.style = "authoryear",
+  bib.style = "authoryear"
+)
+referencias <- RefManageR::ReadBib("bib.bib", check = FALSE)
+```
+
+
+## Artigo
+
+* **Investigation and prediction spatial variability in chemical properties
+of agricultural soil using geostatistics**
+
+::: {.incremental}
+
+* Determinar características do solo
+
+<br />
+
+* Balanço em fertilização do solo
+
+<br />
+
+
+## Proposição de novas distribuições baseadas em geradores
+
+
