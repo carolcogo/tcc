@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.393">
+  <meta name="generator" content="quarto-0.9.483">
 
   <meta name="author" content="Caroline Cogo Carneosso   Orientador Prof.&nbsp;Thiago A. N. De Andrade">
   <title>Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional</title>
@@ -17,15 +17,71 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <script src="index_files/libs/clipboard/clipboard.min.js"></script>
-  <script src="index_files/libs/quarto-html/tabby.min.js"></script>
-  <script src="index_files/libs/quarto-html/popper.min.js"></script>
-  <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -316,6 +372,14 @@
       margin-right: 0; 
     }
   </style>
+<script src="index_files/libs/tone/tone.js"></script>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 </head>
 <body>
   <div class="reveal">
@@ -329,9 +393,9 @@
 </section>
 
 <section>
-<section id="slide-que-separa" class="title-slide slide level1 center">
-<h1>slide que separa</h1>
-
+<section id="aproveita-que-é-html-pra-colocar-gif" class="title-slide slide level1 center">
+<h1>Aproveita que é html pra colocar gif</h1>
+<p><img data-src="https://64.media.tumblr.com/4e52164984f5108ecce07bea93c1c961/2895e2bf8d41633c-55/s640x960/d60b66abc5dd759588d0d514ff668802f7ad610d.gifv" class="absolute" style="top: 190px; left: 150px; width: 350px; height: 858px; "></p>
 </section>
 <section id="sumário" class="slide level2">
 <h2>Sumário</h2>
@@ -352,15 +416,15 @@
 <section id="artigo" class="slide level2">
 <h2>Artigo</h2>
 <ul>
-<li><strong>Investigation and prediction spatial variability in chemical properties of agricultural soil using geostatistics</strong></li>
+<li>Muda isso aqui por favor?</li>
 </ul>
 <div>
 <ul>
-<li class="fragment">Determinar características do solo</li>
+<li class="fragment">Faz uma introdução do problema sei lá</li>
 </ul>
 <p><br></p>
 <ul>
-<li class="fragment">Balanço em fertilização do solo</li>
+<li class="fragment">:)</li>
 </ul>
 <p><br></p>
 </div>
@@ -419,18 +483,39 @@
 <p>Função de densidade de probabilidade</p>
 <p><span class="math display">\[f(x)=2\pi^{-1/2}\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}.\]</span></p>
 <p>Função de taxa de falha</p>
-<p><span class="math inline">\(h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.\)</span></p>
+<p><span class="math display">\[h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.\]</span></p>
 </section>
 <section id="resultados-aplicados" class="slide level2">
 <h2>Resultados aplicados</h2>
+</section>
+<section id="pacote" class="slide level2">
+<h2>pacote</h2>
+</section>
+<section id="section" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="co"># Talvez falar sobre uma distribuição, ai quando "passar" ele mostra o código de como é</span></span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>  <span class="co"># Render a barplot</span></span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="co"># look at this!</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  <span class="co"># Render a barplot</span></span>
+<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>  <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>          <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>          <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>          <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>pacote</li>
 <li>Apresentar uma aplicação</li>
 </ul>
 </section></section>
 <section id="obrigada-pela-atenção" class="title-slide slide level1 center">
 <h1>Obrigada pela atenção!</h1>
-<p><img data-src="https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg" class="absolute" style="top: 90px; left: 150px; width: 650px; height: 858px; "></p>
+<p>oi, vc vem sempre por aqui?</p>
+<p><img data-src="https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg" class="absolute" style="top: 190px; left: 150px; width: 650px; height: 858px; "></p>
 <div class="footer footer-default">
 
 </div>
@@ -446,6 +531,7 @@
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-tone/tone.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -614,7 +700,7 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1110,
+        width: 1190,
 
         height: 720,
 
@@ -639,7 +725,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoTone, QuartoSupport,
 
           RevealMath,
           RevealNotes,
