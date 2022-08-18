@@ -18,6 +18,7 @@ format:
 ---
 
 
+
 # Aproveita que é html pra colocar gif
 
 ![](https://64.media.tumblr.com/4e52164984f5108ecce07bea93c1c961/2895e2bf8d41633c-55/s640x960/d60b66abc5dd759588d0d514ff668802f7ad610d.gifv){.absolute top=190 left=150 width="350" height="858"}
@@ -26,7 +27,6 @@ format:
 ## Sumário
 
 ::: {.incremental}
-
 <br />
 
 - Proposição de novas distribuições baseadas em geradores 
@@ -49,20 +49,60 @@ format:
 :::
 
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
 
-library(tidyverse)
-library(mypdf1)
-library(cowplot)
-options(digits = 3)
 
-```
+
 
 
 ## Proposição de novas distribuições baseadas em geradores
 
-1.**Exp-G**
+1.**Gamma-G**
+
+@zografos2009families e @ristic2012gamma
+
+
+$$ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
+\frac{1}{\Gamma(a)} \int_0^{-\log \left[1-G(x)\right]} t^{a-1} \exp (-t)dt.$$
+
+<br />
+
+para $a>0$, onde $\Gamma(a)=\int_0^\infty t^{a-1}\,\rm{e}^{-t}dt$ é a função gama
+e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompleta.
+
+
+---
+
+2.**EG-G**
+
+@cordeiro2013exponentiated
+
+
+$$ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta. $$
+
+
+<br />
+
+onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
+
+* $\alpha= 1$ temos TL I
+* $\beta= 1$ temos TL II
+
+---
+
+3.**Beta-G**
+
+@eugene2002beta
+
+
+$$F(x)=I_{G(x)}(a,b)=\frac{1}{B(a,b)}\int_0^{G(x)}w^{a-1}(1-w)^{b-1}dw$$
+
+
+para $a>0$ e $b>0$, one $I_y(a,b) = B_y(a,b)/B(a,b)$ is the
+incomplete beta function ratio, and $B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw$ is the incomplete beta function.
+
+---
+
+4.**Exp-G**
 
 -  $$F(x)=G(x)^\alpha.$$  **TL I**
 
@@ -74,62 +114,12 @@ options(digits = 3)
 onde $\alpha>0$
 
 ---
-2.**EG-G**
 
-@cordeiro2013exponentiated
+5.**Erf-G**
 
-$$ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.$$
-
-onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
-
-* $\alpha= 1$ temos **TL I**
-* $\beta= 1$ temos **TL II**
-
----
-
-3.**KW-G**
-
-@cordeiro2013exponentiated
-
-$$ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta. $$
-
-<br />
-
-onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
-
-* $\alpha= 1$ temos **TL I**
-* $\beta= 1$ temos **TL II**
-
----
-
-4.**Beta-G**
-
-@eugene2002beta
-
-$$F(x)=I_{G(x)}(a,b)=\frac{1}{B(a,b)}\int_0^{G(x)}w^{a-1}(1-w)^{b-1}dw$$
-
-para $a>0$ e $b>0$, one $I_y(a,b) = B_y(a,b)/B(a,b)$ is the
-incomplete beta function ratio, and $B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw$ is the incomplete beta function.
-
----
-
-5.**Gamma-G**
-
-@zografos2009families e @ristic2012gamma
-
-$$ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
-\frac{1}{\Gamma(a)} \int_0^{-\log \left[1-G(x)\right]} t^{a-1} \exp (-t)dt.$$
-
-<br />
-
-para $a>0$, onde $\Gamma(a)=\int_0^\infty t^{a-1}\,\rm{e}^{-t}dt$ é a função gama
-e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompleta.
-
----
-
-6.**Erf-G**
 
 $$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right].$$
+
 
 
 Onde $G(x)$ é uma função de distribuição acumulada (fda).
@@ -151,11 +141,15 @@ A função erro é dada por
 Seja $X\sim$ erf-G $(\boldsymbol{\theta})$ for $\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p$, where $\boldsymbol{\Theta}$ represents the parametric space. The pdf of $X$ and hrf are given by, respectively, (for $x \in \mathbb{R}$)
 
 
+
 $$f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}$$
+
 
 and
 
+
 $$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.$$
+
 
 
 ## Novos modelos a serem explorados
@@ -170,15 +164,21 @@ $$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\t
 
 Função de distribuição acumulada 
 
+
 $$F(x)=\text{Erf}\left[\exp\left(\alpha x^\beta\right)-1\right].$$
+
 
 Função de densidade de probabilidade
 
+
 $$f(x)=2\pi^{-1/2}\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}.$$
+
 
 Função de taxa de falha 
 
+
 $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.$$
+
 
 ## Resultados 
 
@@ -186,9 +186,12 @@ $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp
 
 <br />
 
-```{r, echo=TRUE}
+::: {.cell}
+
+```{.r .cell-code}
 #devtools::install_github("https://github.com/AlissonRP/erfG")
 ```
+:::
 
 
 
@@ -222,6 +225,7 @@ output$phonePlot <- renderPlot({
 ![](https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg){.absolute top=190 left=150 width="650" height="858"}
 
 # Bibliografia
+
 
 
 
