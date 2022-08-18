@@ -13,7 +13,8 @@ format:
         width: 1190
         height: 720
         slide-tone: true
-
+      
+        
 ---
 
 
@@ -26,16 +27,28 @@ format:
 ## Sumário
 
 ::: {.incremental}
-- Introdução
-
 <br />
 
-- Desenvolvimento
-
-
+- Proposição de novas distribuições baseadas em geradores 
 <br />
 
-- Conclusões
+- A nova classe ERF-G e suas vantagens
+<br />
+
+- Novos modelos a serem explorados
+<br />
+
+- A nova classe ERF-G e suas vantagens
+<br />
+
+- Erf-Weibull
+<br />
+
+- Resultados
+<br />
+
+- Bibliografia
+
 :::
 
 
@@ -68,6 +81,8 @@ format:
 $$ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
 \frac{1}{\Gamma(a)} \int_0^{-\log \left[1-G(x)\right]} t^{a-1} \exp (-t)dt.$$
 
+<br />
+
 para $a>0$, onde $\Gamma(a)=\int_0^\infty t^{a-1}\,\rm{e}^{-t}dt$ é a função gama
 e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompleta.
 
@@ -90,6 +105,8 @@ e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompl
 $$F(x)=\left[1-\left\{1-G(x)\right\}^\alpha\right]^\beta.$$
 
 
+<br />
+
 onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
 
 ---
@@ -106,7 +123,7 @@ Onde $G(x)$ é uma função de distribuição acumulada (fda).
 
 ## A nova classe ERF-G e suas vantagens
 
-E recentemente, introduzida por Zea e Andrade (2020), a família erf-G
+E recentemente, introduzida por  @fernandez2020erf Zea e Andrade (2020), a família erf-G
 
 A função erro é dada por 
 
@@ -162,9 +179,9 @@ Função de taxa de falha
 $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.$$
 
 
-## Resultados aplicados
+## Resultados 
 
-## pacote
+* Pacote
 
 ## {auto-animate="true"}
 
@@ -192,13 +209,10 @@ output$phonePlot <- renderPlot({
 
 # Obrigada pela atenção!
 
-oi, vc vem sempre por aqui?
 
 ![](https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg){.absolute top=190 left=150 width="650" height="858"}
 
-
-
-
+# Bibliografia
 
 
 
