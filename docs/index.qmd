@@ -5,18 +5,22 @@ author: "Caroline Cogo Carneosso <br> Orientador Prof. Thiago A. N. De Andrade"
 institute: "Universidade Federal de Santa Maria <br/> Departamento de Estatística"
 format: 
     revealjs:
-        theme: solarized
+        theme: [solarized, custom.scss]
         preview-links: auto
         chalkboard: true
         transition: fade
         controls: true
-        width: 1110
+        width: 1190
         height: 720
+        slide-tone: true
 
 ---
 
 
-# slide que separa
+# Aproveita que é html pra colocar gif
+
+![](https://64.media.tumblr.com/4e52164984f5108ecce07bea93c1c961/2895e2bf8d41633c-55/s640x960/d60b66abc5dd759588d0d514ff668802f7ad610d.gifv){.absolute top=190 left=150 width="350" height="858"}
+
 
 ## Sumário
 
@@ -49,16 +53,15 @@ options(digits = 3)
 
 ## Artigo
 
-* **Investigation and prediction spatial variability in chemical properties
-of agricultural soil using geostatistics**
+* Muda isso aqui por favor?
 
 ::: {.incremental}
 
-* Determinar características do solo
+* Faz uma introdução do problema sei lá
 
 <br />
 
-* Balanço em fertilização do solo
+* :)
 
 <br /> 
 :::
@@ -147,17 +150,41 @@ $$f(x)=2\pi^{-1/2}\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\
 
 Função de taxa de falha 
 
-$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.$
+$$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.$$
 
 ## Resultados aplicados
-* pacote
+
+## pacote
+
+## {auto-animate="true"}
+
+```r
+# Talvez falar sobre uma distribuição, ai quando "passar" ele mostra o código de como é
+output$phonePlot <- renderPlot({
+  # Render a barplot
+})
+```
+
+## {auto-animate=true}
+
+```r
+# look at this!
+output$phonePlot <- renderPlot({
+  # Render a barplot
+  barplot(WorldPhones[,input$region]*1000, 
+          main=input$region,
+          ylab="Number of Telephones",
+          xlab="Year")
+})
+```
+
 * Apresentar uma aplicação
 
 # Obrigada pela atenção!
 
-oi
+oi, vc vem sempre por aqui?
 
-![](https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg){.absolute top=90 left=150 width="650" height="858"}
+![](https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg){.absolute top=190 left=150 width="650" height="858"}
 
 
 
