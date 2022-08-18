@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.393">
 
-  <meta name="author" content="Caroline Cogo Carneosso   Orientador Prof.&nbsp;Thiago A. N. De Andrade">
+  <meta name="author" content="Caroline Cogo Carneosso   Orientador Prof.&nbsp;Thiago A. N. De Andrade   Coorientador Prof.&nbsp;Cleber Bisognin">
   <title>Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -406,7 +406,7 @@
 <section id="title-slide" class="center">
   <h1 class="title">Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional</h1>
   <p class="subtitle">TCC A</p>
-  <p class="author">Caroline Cogo Carneosso <br> Orientador Prof.&nbsp;Thiago A. N. De Andrade</p>
+  <p class="author">Caroline Cogo Carneosso <br> Orientador Prof.&nbsp;Thiago A. N. De Andrade <br> Coorientador Prof.&nbsp;Cleber Bisognin</p>
   <p class="institute">Universidade Federal de Santa Maria <br> Departamento de Estatística</p>
 </section>
 
@@ -435,9 +435,9 @@
 <p><br></p>
 <p><strong>T Lehmann II</strong></p>
 <ul>
-<li><span class="math display">\[F(x)=1-\left[1-G(x)\right]^\alpha.\]</span></li>
+<li><span class="math display">\[F(x)=1-\left[1-G(x)\right]^\alpha,\]</span></li>
 </ul>
-<p>onde <span class="math inline">\(\alpha&gt;0\)</span></p>
+<p>onde <span class="math inline">\(\alpha&gt;0\)</span>.</p>
 </section>
 <section class="slide level2">
 
@@ -446,8 +446,8 @@
 <p><span class="math display">\[ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.\]</span></p>
 <p>onde <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span> são dois parâmetros adicionais de forma.</p>
 <ul>
-<li><span class="math inline">\(\alpha= 1\)</span> temos <strong>TL I</strong></li>
-<li><span class="math inline">\(\beta= 1\)</span> temos <strong>TL II</strong></li>
+<li>Se <span class="math inline">\(\alpha= 1\)</span> temos <strong>TL I</strong>.</li>
+<li>Se <span class="math inline">\(\beta= 1\)</span> temos <strong>TL II</strong>.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -456,8 +456,8 @@
 <p><span class="math display">\[ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. \]</span></p>
 <p><br></p>
 <ul>
-<li><span class="math inline">\(\alpha= 1\)</span> temos <strong>TL II</strong></li>
-<li><span class="math inline">\(\beta= 1\)</span> temos <strong>TL I</strong></li>
+<li>Se <span class="math inline">\(\alpha= 1\)</span> temos <strong>TL II</strong>.</li>
+<li>Se <span class="math inline">\(\beta= 1\)</span> temos <strong>TL I</strong>.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -479,23 +479,21 @@
 <section class="slide level2">
 
 <p>6.<strong>Erf-G</strong></p>
-<p><span class="math display">\[F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right].\]</span></p>
-<p>Onde <span class="math inline">\(G(x)\)</span> é uma função de distribuição acumulada (fda).</p>
+<p><span class="math display">\[F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],\]</span></p>
+<p>onde <span class="math inline">\(G(x)\)</span> é uma função de distribuição acumulada (fda).</p>
 </section>
 <section id="a-nova-classe-erf-g-e-suas-vantagens" class="slide level2">
 <h2>A nova classe ERF-G e suas vantagens</h2>
-<p>E recentemente, introduzida por <span class="citation" data-cites="fernandez2020erf">FERNÁNDEZ (<a href="#/ref-fernandez2020erf" role="doc-biblioref" onclick="return false;">2020</a>)</span>, a família erf-G.</p>
+<p>E recentemente, introduzida por <span class="citation" data-cites="fernandez2020erf">FERNÁNDEZ (<a href="#/ref-fernandez2020erf" role="doc-biblioref" onclick="return false;">2020</a>)</span>, a família Erf-G.</p>
 <p>A função erro é dada por</p>
-<p><span class="math display">\[\begin{equation}\label{erf}
-\text{erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.
-\end{equation}\]</span></p>
+<p><span class="math display">\[\text{Erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.\]</span></p>
 </section>
 <section class="slide level2">
 
-<p>Seja <span class="math inline">\(X\sim\)</span> erf-G <span class="math inline">\((\boldsymbol{\theta})\)</span> for <span class="math inline">\(\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p\)</span>, where <span class="math inline">\(\boldsymbol{\Theta}\)</span> represents the parametric space. The pdf of <span class="math inline">\(X\)</span> and hrf are given by, respectively, (for <span class="math inline">\(x \in \mathbb{R}\)</span>)</p>
+<p>Seja <span class="math inline">\(X\sim\)</span> Erf-G <span class="math inline">\((\boldsymbol{\theta})\)</span> for <span class="math inline">\(\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p\)</span>, where <span class="math inline">\(\boldsymbol{\Theta}\)</span> represents the parametric space. The pdf of <span class="math inline">\(X\)</span> and hrf are given by, respectively, (for <span class="math inline">\(x \in \mathbb{R}\)</span>)</p>
 <p><span class="math display">\[f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}\]</span></p>
 <p>and</p>
-<p><span class="math display">\[h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.\]</span></p>
+<p><span class="math display">\[h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{Erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.\]</span></p>
 </section>
 <section id="novos-modelos-a-serem-explorados" class="slide level2">
 <h2>Novos modelos a serem explorados</h2>
@@ -544,7 +542,7 @@
 </section>
 <section id="obrigada-pela-atenção" class="title-slide slide level1 center">
 <h1>Obrigada pela atenção!</h1>
-<p><img data-src="https://media1.giphy.com/media/xIJLgO6rizUJi/200.webp?cid=ecf05e47qjvt0os5t3le3sgr2uszvov8tr1wtkk1d5uh9a1f&amp;rid=200.webp&amp;ct=g" class="absolute" style="top: 190px; left: 150px; width: 650px; height: 858px; "></p>
+
 </section>
 
 <section id="bibliografia" class="title-slide slide level1 smaller scrollable">

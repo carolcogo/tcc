@@ -1,7 +1,7 @@
 ---
 title: "Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional"
 subtitle: "TCC A"
-author: "Caroline Cogo Carneosso <br> Orientador Prof. Thiago A. N. De Andrade"
+author: "Caroline Cogo Carneosso <br> Orientador Prof. Thiago A. N. De Andrade <br> Coorientador Prof. Cleber Bisognin"
 institute: "Universidade Federal de Santa Maria <br/> Departamento de Estatística"
 format: 
     revealjs:
@@ -68,9 +68,9 @@ options(digits = 3)
 
 **T Lehmann II**
 
-- $$F(x)=1-\left[1-G(x)\right]^\alpha.$$
+- $$F(x)=1-\left[1-G(x)\right]^\alpha,$$
 
-onde $\alpha>0$
+onde $\alpha>0$.
 
 ---
 
@@ -82,8 +82,8 @@ $$ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.$$
 
 onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
 
-* $\alpha= 1$ temos **TL I**
-* $\beta= 1$ temos **TL II**
+* Se $\alpha= 1$ temos **TL I**.
+* Se $\beta= 1$ temos **TL II**.
 
 ---
 
@@ -95,8 +95,8 @@ $$ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. $$
 <br />
 
 
-* $\alpha= 1$ temos **TL II**
-* $\beta= 1$ temos **TL I**
+* Se $\alpha= 1$ temos **TL II**.
+* Se $\beta= 1$ temos **TL I**.
 
 ---
 
@@ -127,33 +127,38 @@ e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompl
 
 6.**Erf-G**
 
-$$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right].$$
+$$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],$$
 
 
-Onde $G(x)$ é uma função de distribuição acumulada (fda).
+onde $G(x)$ é uma função de distribuição acumulada (fda).
 
 
 ## A nova classe ERF-G e suas vantagens
 
-E recentemente, introduzida por  @fernandez2020erf, a família erf-G.
+E recentemente, introduzida por  @fernandez2020erf, a família Erf-G.
 
 A função erro é dada por 
 
-\begin{equation}\label{erf}
-\text{erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.
-\end{equation}
+$$\text{Erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.$$
+
+$$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],$$
 
 
 ---
 
-Seja $X\sim$ erf-G $(\boldsymbol{\theta})$ for $\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p$, where $\boldsymbol{\Theta}$ represents the parametric space. The pdf of $X$ and hrf are given by, respectively, (for $x \in \mathbb{R}$)
+![dd](logExp_Erf-Exp_plot.pdf){fig-alt="A drawing of an elephant."}
+
+
+---
+
+Seja $X\sim$ Erf-G $(\boldsymbol{\theta})$ for $\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p$, where $\boldsymbol{\Theta}$ represents the parametric space. The pdf of $X$ and hrf are given by, respectively, (for $x \in \mathbb{R}$)
 
 
 $$f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}$$
 
 and
 
-$$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.$$
+$$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{Erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.$$
 
 
 ## Novos modelos a serem explorados
@@ -162,7 +167,7 @@ $$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\t
 
 * Erf-Normal
 
-* Erf-
+* Erf- Gamma
 
 ## Erf-Weibull
 
@@ -188,6 +193,23 @@ $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp
 #devtools::install_github("https://github.com/AlissonRP/erfG")
 ```
 
+```{r}
+
+x=seq(0.01,1.5,length.out=1000)
+
+f=erfG::derf(x, dist = "weibull", alpha=0.5, gamma=0.6)
+erfG::perf()
+plot(x,f,type = "l")
+
+#pdf
+x <- seq(0.01,3,by=0.01)
+plot(x,pdf_Erf_We(c(alpha=0.29,lambda=3),x=x),type="l",lwd=2,ylab="",xlab="")
+lines(x,pdf_Erf_We(c(alpha=0.231,lambda=2.1),x=x),lwd=2,lty=2)
+lines(x,pdf_Erf_We(c(alpha=0.3,lambda=0.5),x=x),lwd=2,lty=3)
+lines(x,pdf_Erf_We(c(alpha=0.9,lambda=0.9),x=x),lwd=2,lty=4)
+legend(2,1.4,c(expression(alpha~"=0.29 "~beta~"=3"),expression(alpha~"=0.231 "~beta~"=2.1"),               expression(alpha~"=0.3"~beta~"=0.5"),expression(alpha~"=0.9 "~beta~"=0.9")),lty=c(1,2,3,4),lwd=c(2,2,2,2),bty="n",
+       cex = 1.2)
+```
 
 
 
@@ -215,9 +237,6 @@ output$phonePlot <- renderPlot({
 
 
 # Obrigada pela atenção!
-
-
-![](https://media1.giphy.com/media/xIJLgO6rizUJi/200.webp?cid=ecf05e47qjvt0os5t3le3sgr2uszvov8tr1wtkk1d5uh9a1f&rid=200.webp&ct=g){.absolute top=190 left=150 width="650" height="858"}
 
 # Bibliografia
 
