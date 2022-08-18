@@ -410,11 +410,6 @@
   <p class="institute">Universidade Federal de Santa Maria <br> Departamento de Estatística</p>
 </section>
 
-<section>
-<section id="aproveita-que-é-html-pra-colocar-gif" class="title-slide slide level1 center">
-<h1>Aproveita que é html pra colocar gif</h1>
-<p><img data-src="https://64.media.tumblr.com/4e52164984f5108ecce07bea93c1c961/2895e2bf8d41633c-55/s640x960/d60b66abc5dd759588d0d514ff668802f7ad610d.gifv" class="absolute" style="top: 190px; left: 150px; width: 350px; height: 858px; "></p>
-</section>
 <section id="sumário" class="slide level2">
 <h2>Sumário</h2>
 <div>
@@ -431,7 +426,50 @@
 </section>
 <section id="proposição-de-novas-distribuições-baseadas-em-geradores" class="slide level2">
 <h2>Proposição de novas distribuições baseadas em geradores</h2>
-<p>1.<strong>Gamma-G</strong></p>
+<p>1.<strong>Exp-G</strong></p>
+<p><br></p>
+<p><strong>T Lehmann I</strong></p>
+<ul>
+<li><span class="math display">\[F(x)=G(x)^\alpha.\]</span></li>
+</ul>
+<p><br></p>
+<p><strong>T Lehmann II</strong></p>
+<ul>
+<li><span class="math display">\[F(x)=1-\left[1-G(x)\right]^\alpha.\]</span></li>
+</ul>
+<p>onde <span class="math inline">\(\alpha&gt;0\)</span></p>
+</section>
+<section class="slide level2">
+
+<p>2.<strong>EG-G</strong></p>
+<p><span class="citation" data-cites="cordeiro2013exponentiated">Cordeiro, Ortega, and Cunha (<a href="#/ref-cordeiro2013exponentiated" role="doc-biblioref" onclick="return false;">2013</a>)</span></p>
+<p><span class="math display">\[ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.\]</span></p>
+<p>onde <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span> são dois parâmetros adicionais de forma.</p>
+<ul>
+<li><span class="math inline">\(\alpha= 1\)</span> temos <strong>TL I</strong></li>
+<li><span class="math inline">\(\beta= 1\)</span> temos <strong>TL II</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>3.<strong>KW-G</strong></p>
+<p><span class="math display">\[ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. \]</span></p>
+<p><br></p>
+<ul>
+<li><span class="math inline">\(\alpha= 1\)</span> temos <strong>TL II</strong></li>
+<li><span class="math inline">\(\beta= 1\)</span> temos <strong>TL I</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>4.<strong>Beta-G</strong></p>
+<p><span class="citation" data-cites="eugene2002beta">Eugene, Lee, and Famoye (<a href="#/ref-eugene2002beta" role="doc-biblioref" onclick="return false;">2002</a>)</span></p>
+<p><span class="math display">\[F(x)=I_{G(x)}(a,b)=\frac{1}{B(a,b)}\int_0^{G(x)}w^{a-1}(1-w)^{b-1}dw\]</span></p>
+<p>para <span class="math inline">\(a&gt;0\)</span> e <span class="math inline">\(b&gt;0\)</span>, one <span class="math inline">\(I_y(a,b) = B_y(a,b)/B(a,b)\)</span> is the incomplete beta function ratio, and <span class="math inline">\(B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw\)</span> is the incomplete beta function.</p>
+</section>
+<section class="slide level2">
+
+<p>5.<strong>Gamma-G</strong></p>
 <p><span class="citation" data-cites="zografos2009families">Zografos and Balakrishnan (<a href="#/ref-zografos2009families" role="doc-biblioref" onclick="return false;">2009</a>)</span> e <span class="citation" data-cites="ristic2012gamma">Ristić and Balakrishnan (<a href="#/ref-ristic2012gamma" role="doc-biblioref" onclick="return false;">2012</a>)</span></p>
 <p><span class="math display">\[ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
 \frac{1}{\Gamma(a)} \int_0^{-\log \left[1-G(x)\right]} t^{a-1} \exp (-t)dt.\]</span></p>
@@ -440,35 +478,7 @@
 </section>
 <section class="slide level2">
 
-<p>2.<strong>EG-G</strong></p>
-<p><span class="citation" data-cites="cordeiro2013exponentiated">Cordeiro, Ortega, and Cunha (<a href="#/ref-cordeiro2013exponentiated" role="doc-biblioref" onclick="return false;">2013</a>)</span></p>
-<p><span class="math display">\[ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta. \]</span></p>
-<p><br></p>
-<p>onde <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span> são dois parâmetros adicionais de forma.</p>
-<ul>
-<li><span class="math inline">\(\alpha= 1\)</span> temos TL I</li>
-<li><span class="math inline">\(\beta= 1\)</span> temos TL II</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>3.<strong>Beta-G</strong></p>
-<p><span class="citation" data-cites="eugene2002beta">Eugene, Lee, and Famoye (<a href="#/ref-eugene2002beta" role="doc-biblioref" onclick="return false;">2002</a>)</span></p>
-<p><span class="math display">\[F(x)=I_{G(x)}(a,b)=\frac{1}{B(a,b)}\int_0^{G(x)}w^{a-1}(1-w)^{b-1}dw\]</span></p>
-<p>para <span class="math inline">\(a&gt;0\)</span> e <span class="math inline">\(b&gt;0\)</span>, one <span class="math inline">\(I_y(a,b) = B_y(a,b)/B(a,b)\)</span> is the incomplete beta function ratio, and <span class="math inline">\(B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw\)</span> is the incomplete beta function.</p>
-</section>
-<section class="slide level2">
-
-<p>4.<strong>Exp-G</strong></p>
-<ul>
-<li><span class="math display">\[F(x)=\left[1-\left\{1-G(x)\right\}^\alpha\right]^\beta.\]</span></li>
-</ul>
-<p><br></p>
-<p>onde <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span> são dois parâmetros adicionais de forma.</p>
-</section>
-<section class="slide level2">
-
-<p>5.<strong>Erf-G</strong></p>
+<p>6.<strong>Erf-G</strong></p>
 <p><span class="math display">\[F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right].\]</span></p>
 <p>Onde <span class="math inline">\(G(x)\)</span> é uma função de distribuição acumulada (fda).</p>
 </section>
@@ -531,10 +541,10 @@
 <span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>          <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
 <span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>          <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
 <span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section>
+</section>
 <section id="obrigada-pela-atenção" class="title-slide slide level1 center">
 <h1>Obrigada pela atenção!</h1>
-<p><img data-src="https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg" class="absolute" style="top: 190px; left: 150px; width: 650px; height: 858px; "></p>
+<p><img data-src="https://media1.giphy.com/media/xIJLgO6rizUJi/200.webp?cid=ecf05e47qjvt0os5t3le3sgr2uszvov8tr1wtkk1d5uh9a1f&amp;rid=200.webp&amp;ct=g" class="absolute" style="top: 190px; left: 150px; width: 650px; height: 858px; "></p>
 </section>
 
 <section id="bibliografia" class="title-slide slide level1 smaller scrollable">

@@ -17,12 +17,6 @@ format:
           @*
 ---
 
-
-# Aproveita que é html pra colocar gif
-
-![](https://64.media.tumblr.com/4e52164984f5108ecce07bea93c1c961/2895e2bf8d41633c-55/s640x960/d60b66abc5dd759588d0d514ff668802f7ad610d.gifv){.absolute top=190 left=150 width="350" height="858"}
-
-
 ## Sumário
 
 ::: {.incremental}
@@ -64,16 +58,22 @@ options(digits = 3)
 
 1.**Exp-G**
 
--  $$F(x)=G(x)^\alpha.$$  **TL I**
+<br />
 
+**T Lehmann I**
+
+- $$F(x)=G(x)^\alpha.$$  
 
 <br />
 
-- $$F(x)=1-\left[1-G(x)\right]^\alpha$$ **TL I**
+**T Lehmann II**
+
+- $$F(x)=1-\left[1-G(x)\right]^\alpha.$$
 
 onde $\alpha>0$
 
 ---
+
 2.**EG-G**
 
 @cordeiro2013exponentiated
@@ -89,16 +89,14 @@ onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
 
 3.**KW-G**
 
-@cordeiro2013exponentiated
 
-$$ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta. $$
+$$ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. $$
 
 <br />
 
-onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
 
-* $\alpha= 1$ temos **TL I**
-* $\beta= 1$ temos **TL II**
+* $\alpha= 1$ temos **TL II**
+* $\beta= 1$ temos **TL I**
 
 ---
 
@@ -219,7 +217,7 @@ output$phonePlot <- renderPlot({
 # Obrigada pela atenção!
 
 
-![](https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg){.absolute top=190 left=150 width="650" height="858"}
+![](https://media1.giphy.com/media/xIJLgO6rizUJi/200.webp?cid=ecf05e47qjvt0os5t3le3sgr2uszvov8tr1wtkk1d5uh9a1f&rid=200.webp&ct=g){.absolute top=190 left=150 width="650" height="858"}
 
 # Bibliografia
 
