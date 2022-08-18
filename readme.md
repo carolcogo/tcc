@@ -1,2 +1,2 @@
-# não dá p terminar a facldade sem isso?
+# não dá p terminar a faculdade sem isso?
 
