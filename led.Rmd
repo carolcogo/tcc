@@ -173,3 +173,23 @@ class: center, middle
 
 # Obrigada pela atenção!
 
+
+```{r, eval=False}
+
+x=seq(0.01,1.5,length.out=1000)
+
+f=erfG::derf(x, dist = "weibull", alpha=0.5, gamma=0.6)
+erfG::perf()
+plot(x,f,type = "l")
+
+#pdf
+x <- seq(0.01,3,by=0.01)
+plot(x,pdf_Erf_We(c(alpha=0.29,lambda=3),x=x),type="l",lwd=2,ylab="",xlab="")
+lines(x,pdf_Erf_We(c(alpha=0.231,lambda=2.1),x=x),lwd=2,lty=2)
+lines(x,pdf_Erf_We(c(alpha=0.3,lambda=0.5),x=x),lwd=2,lty=3)
+lines(x,pdf_Erf_We(c(alpha=0.9,lambda=0.9),x=x),lwd=2,lty=4)
+legend(2,1.4,c(expression(alpha~"=0.29 "~beta~"=3"),expression(alpha~"=0.231 "~beta~"=2.1"),               expression(alpha~"=0.3"~beta~"=0.5"),expression(alpha~"=0.9 "~beta~"=0.9")),lty=c(1,2,3,4),lwd=c(2,2,2,2),bty="n",
+       cex = 1.2)
+```
+
+
