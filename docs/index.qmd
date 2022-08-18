@@ -80,6 +80,15 @@ e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompl
 
 @cordeiro2013exponentiated
 
+$$ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta. $$
+
+<br />
+
+onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
+
+* $\alpha= 1$ temos TL I
+* $\beta= 1$ temos TL II
+
 ---
 
 3.**Beta-G**
@@ -95,8 +104,7 @@ incomplete beta function ratio, and $B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw$ i
 
 4.**Exp-G**
 
-
-$$F(x)=\left[1-\left\{1-G(x)\right\}^\alpha\right]^\beta.$$
+-  $$F(x)=\left[1-\left\{1-G(x)\right\}^\alpha\right]^\beta.$$
 
 <br />
 
