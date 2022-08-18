@@ -147,7 +147,7 @@ $$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],$$
 ---
 
 
-![](logExp_Erf-Exp_plot.pdf){.absolute top=210 right=190 width="450" height="390"}
+![](logExp_Erf-Exp_plot1024_1.jpg){.absolute top=10 right=190 width="950" height="900"}
 
 
 ---
