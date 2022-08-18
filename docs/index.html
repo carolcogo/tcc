@@ -80,9 +80,27 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <script src="index_files/libs/tone/tone.js"></script>
   <script src="index_files/libs/clipboard/clipboard.min.js"></script>
   <script src="index_files/libs/quarto-html/tabby.min.js"></script>
   <script src="index_files/libs/quarto-html/popper.min.js"></script>
@@ -405,32 +423,16 @@
 <li class="fragment"><p>Proposição de novas distribuições baseadas em geradores <br></p></li>
 <li class="fragment"><p>A nova classe ERF-G e suas vantagens <br></p></li>
 <li class="fragment"><p>Novos modelos a serem explorados <br></p></li>
-<li class="fragment"><p>A nova classe ERF-G e suas vantagens <br></p></li>
 <li class="fragment"><p>Erf-Weibull <br></p></li>
 <li class="fragment"><p>Resultados <br></p></li>
 <li class="fragment"><p>Bibliografia</p></li>
 </ul>
 </div>
 </section>
-<section id="artigo" class="slide level2">
-<h2>Artigo</h2>
-<ul>
-<li>Muda isso aqui por favor?</li>
-</ul>
-<div>
-<ul>
-<li class="fragment">Faz uma introdução do problema sei lá</li>
-</ul>
-<p><br></p>
-<ul>
-<li class="fragment">:)</li>
-</ul>
-<p><br></p>
-</div>
-</section>
 <section id="proposição-de-novas-distribuições-baseadas-em-geradores" class="slide level2">
 <h2>Proposição de novas distribuições baseadas em geradores</h2>
 <p>1.<strong>Gamma-G</strong></p>
+<p><span class="citation" data-cites="zografos2009families">Zografos and Balakrishnan (<a href="#/ref-zografos2009families" role="doc-biblioref" onclick="return false;">2009</a>)</span> e <span class="citation" data-cites="ristic2012gamma">Ristić and Balakrishnan (<a href="#/ref-ristic2012gamma" role="doc-biblioref" onclick="return false;">2012</a>)</span></p>
 <p><span class="math display">\[ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
 \frac{1}{\Gamma(a)} \int_0^{-\log \left[1-G(x)\right]} t^{a-1} \exp (-t)dt.\]</span></p>
 <p><br></p>
@@ -439,10 +441,14 @@
 <section class="slide level2">
 
 <p>2.<strong>EG-G</strong></p>
+<p><span class="citation" data-cites="cordeiro2013exponentiated">Cordeiro, Ortega, and Cunha (<a href="#/ref-cordeiro2013exponentiated" role="doc-biblioref" onclick="return false;">2013</a>)</span></p>
 </section>
 <section class="slide level2">
 
 <p>3.<strong>Beta-G</strong></p>
+<p><span class="citation" data-cites="eugene2002beta">Eugene, Lee, and Famoye (<a href="#/ref-eugene2002beta" role="doc-biblioref" onclick="return false;">2002</a>)</span></p>
+<p><span class="math display">\[F(x)=I_{G(x)}(a,b)=\frac{1}{B(a,b)}\int_0^{G(x)}w^{a-1}(1-w)^{b-1}dw\]</span></p>
+<p>para <span class="math inline">\(a&gt;0\)</span> e <span class="math inline">\(b&gt;0\)</span>, one <span class="math inline">\(I_y(a,b) = B_y(a,b)/B(a,b)\)</span> is the incomplete beta function ratio, and <span class="math inline">\(B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw\)</span> is the incomplete beta function.</p>
 </section>
 <section class="slide level2">
 
@@ -459,15 +465,15 @@
 </section>
 <section id="a-nova-classe-erf-g-e-suas-vantagens" class="slide level2">
 <h2>A nova classe ERF-G e suas vantagens</h2>
-<p>E recentemente, introduzida por <span class="citation" data-cites="fernandez2020erf">@fernandez2020erf</span> Zea e Andrade (2020), a família erf-G</p>
+<p>E recentemente, introduzida por <span class="citation" data-cites="fernandez2020erf">FERNÁNDEZ (<a href="#/ref-fernandez2020erf" role="doc-biblioref" onclick="return false;">2020</a>)</span>, a família erf-G.</p>
 <p>A função erro é dada por</p>
 <p><span class="math display">\[\begin{equation}\label{erf}
 \text{erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.
 \end{equation}\]</span></p>
 </section>
-<section id="equações" class="slide level2">
-<h2>Equações</h2>
-<p>Now, let <span class="math inline">\(X\sim\)</span> erf-G <span class="math inline">\((\boldsymbol{\theta})\)</span> for <span class="math inline">\(\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p\)</span>, where <span class="math inline">\(\boldsymbol{\Theta}\)</span> represents the parametric space. The pdf of <span class="math inline">\(X\)</span> and hrf are given by, respectively, (for <span class="math inline">\(x \in \mathbb{R}\)</span>)</p>
+<section class="slide level2">
+
+<p>Seja <span class="math inline">\(X\sim\)</span> erf-G <span class="math inline">\((\boldsymbol{\theta})\)</span> for <span class="math inline">\(\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p\)</span>, where <span class="math inline">\(\boldsymbol{\Theta}\)</span> represents the parametric space. The pdf of <span class="math inline">\(X\)</span> and hrf are given by, respectively, (for <span class="math inline">\(x \in \mathbb{R}\)</span>)</p>
 <p><span class="math display">\[f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}\]</span></p>
 <p>and</p>
 <p><span class="math display">\[h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.\]</span></p>
@@ -482,7 +488,6 @@
 </section>
 <section id="erf-weibull" class="slide level2">
 <h2>Erf-Weibull</h2>
-<p>Adding concavity in the likelihood of Weibull distribution: a new model with bathtub hazard function</p>
 <p>Função de distribuição acumulada</p>
 <p><span class="math display">\[F(x)=\text{Erf}\left[\exp\left(\alpha x^\beta\right)-1\right].\]</span></p>
 <p>Função de densidade de probabilidade</p>
@@ -493,39 +498,63 @@
 <section id="resultados" class="slide level2">
 <h2>Resultados</h2>
 <ul>
-<li>Pacote</li>
+<li>Pacote hospedado no Github</li>
 </ul>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#devtools::install_github("https://github.com/AlissonRP/erfG")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="section" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="co"># Talvez falar sobre uma distribuição, ai quando "passar" ele mostra o código de como é</span></span>
-<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>  <span class="co"># Render a barplot</span></span>
-<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="co"># Talvez falar sobre uma distribuição, ai quando "passar" ele mostra o código de como é</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  <span class="co"># Render a barplot</span></span>
+<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="section-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="co"># look at this!</span></span>
-<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  <span class="co"># Render a barplot</span></span>
-<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>  <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
-<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>          <span class="at">main=</span>input<span class="sc">$</span>region,</span>
-<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>          <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
-<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>          <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
-<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Apresentar uma aplicação</li>
-</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="co"># look at this!</span></span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>  <span class="co"># Render a barplot</span></span>
+<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>  <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>          <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>          <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>          <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section id="obrigada-pela-atenção" class="title-slide slide level1 center">
 <h1>Obrigada pela atenção!</h1>
 <p><img data-src="https://fotos.vivadecora.com.br/decoracao-quarto-de-casal-tapete-creme-casacor2016-104905-square_cover_xlarge.jpg" class="absolute" style="top: 190px; left: 150px; width: 650px; height: 858px; "></p>
 </section>
 
-<section id="bibliografia" class="title-slide slide level1 center">
+<section id="bibliografia" class="title-slide slide level1 smaller scrollable">
 <h1>Bibliografia</h1>
 <div class="footer footer-default">
 
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-cordeiro2013exponentiated" class="csl-entry" role="doc-biblioentry">
+Cordeiro, Gauss M, Edwin MM Ortega, and Daniel CC da Cunha. 2013. <span>“The Exponentiated Generalized Class of Distributions.”</span> <em>Journal of Data Science</em> 11 (1): 1–27.
+</div>
+<div id="ref-eugene2002beta" class="csl-entry" role="doc-biblioentry">
+Eugene, Nicholas, Carl Lee, and Felix Famoye. 2002. <span>“Beta-Normal Distribution and Its Applications.”</span> <em>Communications in Statistics-Theory and Methods</em> 31 (4): 497–512.
+</div>
+<div id="ref-fernandez2020erf" class="csl-entry" role="doc-biblioentry">
+FERNÁNDEZ, THIAGO AN, LUZ MILENA ZEA e DE ANDRADE. 2020. <span>“The Erf-g Family: New Unconditioned and Log-Linear Regression Models.”</span> <em>Chilean Journal of Statistics (ChJS)</em> 11 (1).
+</div>
+<div id="ref-r" class="csl-entry" role="doc-biblioentry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-ristic2012gamma" class="csl-entry" role="doc-biblioentry">
+Ristić, Miroslav M, and Narayanaswamy Balakrishnan. 2012. <span>“The Gamma-Exponentiated Exponential Distribution.”</span> <em>Journal of Statistical Computation and Simulation</em> 82 (8): 1191–1206.
+</div>
+<div id="ref-rstudio" class="csl-entry" role="doc-biblioentry">
+RStudio Team. 2022. <span>“<span>RStudio</span>: <span>Integrated</span> <span>Development</span> <span>Environment</span> for <span>R</span>.”</span> Boston, MA: RStudio, Inc. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.
+</div>
+<div id="ref-zografos2009families" class="csl-entry" role="doc-biblioentry">
+Zografos, Konstantinos, and Narayanaswamy Balakrishnan. 2009. <span>“On Families of Beta-and Generalized Gamma-Generated Distributions and Associated Inference.”</span> <em>Statistical Methodology</em> 6 (4): 344–62.
+</div>
 </div>
 </section>
     </div>
@@ -539,7 +568,6 @@
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="index_files/libs/revealjs/plugin/quarto-tone/tone.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -733,7 +761,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoTone, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
