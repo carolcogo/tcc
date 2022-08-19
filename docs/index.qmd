@@ -264,12 +264,13 @@ lerfweibull<-function(y,alpha,gama)
   return(like)
 }
 
-# y<-rerfweibull(n=100,alpha=0.2,gama=2.0)
+y<-rerfweibull(n=100,alpha=0.2,gama=2.0)
 # plot(density(y))
 
 
 #alpha<-seq(0.01,2,length.out=50)
 #gama<-seq(1.81,1.815,length.out=50)
+
 alpha<-seq(0.01,2,length.out=50)
 gama<-seq(2.51,2.815,length.out=50)
 r<-length(gama)
