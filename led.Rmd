@@ -177,8 +177,8 @@ class: center, middle
 ```{r, eval=False}
 
 x=seq(0.01,1.5,length.out=1000)
-
 f=erfG::derf(x, dist = "weibull", alpha=0.5, gamma=0.6)
+f=erfG::derf(x, dist = "weibull", alpha=0.29, gamma=3)
 erfG::perf()
 plot(x,f,type = "l")
 

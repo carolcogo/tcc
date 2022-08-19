@@ -124,6 +124,8 @@ para $a>0$ e $b>0$, parâmetros que governam a assimetria e a curtose da distrib
 
 5.**Gamma-G**
 
+<br />
+
 @zografos2009families e @ristic2012gamma
 
 $$ F(x)=\frac{\gamma\left( a, -\log \left[1-G(x)\right]\right)}{\Gamma(a)} =
@@ -138,42 +140,54 @@ e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompl
 
 6.**Erf-G**
 
+<br />
+
+DE ANDRADE E @fernandez2020erf
+
 $$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],$$
 
+<br />
 
 onde $G(x)$ é uma função de distribuição acumulada (fda).
 
 
 ## A nova classe ERF-G e suas vantagens
 
-E recentemente, introduzida por  @fernandez2020erf, a família Erf-G.
+E recentemente, foi introduzida a família Erf-G.
+
+<br />
 
 A função erro é dada por 
 
 $$\text{Erf}(z)=\frac{1}{\sqrt{\pi}}\int_{-z}^z \exp(-t^2)\, \textrm{d}t=\frac{2}{\sqrt{\pi}}\int_0^z \exp(-t^2) \,\textrm{d}t,\quad z \in \mathbb{R}.$$
 
-$$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],$$
+<br />
+
+
+
+$$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right].$$
 
 
 ---
 
+Seja $X\sim$ Erf-G $(\boldsymbol{\theta})$ para $\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p$, onde $\boldsymbol{\Theta}$ representa o espaço paramétrico. 
+
+<br />
+
+$$f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}$$
+
+e
+
+$$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{Erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.$$
+
+---
 
 ![](logExp_Erf-Exp_plot1024_1.jpg){.absolute top=10 right=190 width="950" height="900"}
 
 
----
-
-Seja $X\sim$ Erf-G $(\boldsymbol{\theta})$ for $\boldsymbol{\theta} \in \boldsymbol{\Theta} \subseteq \mathbb{R}^p$, where $\boldsymbol{\Theta}$ represents the parametric space. The pdf of $X$ and hrf are given by, respectively, (for $x \in \mathbb{R}$)
-
-
-$$f(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2}$$
-
-and
-
-$$h(x)=\frac{2g(x;\boldsymbol{\theta})\exp\left[-\left(\dfrac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right)^2\right]}{\sqrt{\pi}(1-G(x;\boldsymbol{\theta}))^2 \left\{  1-\text{Erf}\left[\frac{G(x;\boldsymbol{\theta})}{1-G(x;\boldsymbol{\theta})}\right]  \right\}}.$$
-
-
 ## Novos modelos a serem explorados
+
+<br />
 
 * Erf-Wei
 
@@ -203,37 +217,23 @@ $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp
 
 * Pacote hospedado no Github 
 
-<br />
-
 ```{r, echo=TRUE}
 #devtools::install_github("https://github.com/AlissonRP/erfG")
 ```
 
+<br />
 
-## {auto-animate="true"}
+```{r, echo=TRUE}
 
-```r
-# Talvez falar sobre uma distribuição, ai quando "passar" ele mostra o código de como é
-output$phonePlot <- renderPlot({
-  # Render a barplot
-})
+x=seq(0.01,3,by=0.01)
+
+f=erfG::derf(x, dist = "weibull", alpha=0.29, gamma=3)
+
+plot(x,f,type = "l")
+
 ```
 
-## {auto-animate=true}
-
-```r
-# look at this!
-output$phonePlot <- renderPlot({
-  # Render a barplot
-  barplot(WorldPhones[,input$region]*1000, 
-          main=input$region,
-          ylab="Number of Telephones",
-          xlab="Year")
-})
-```
-
-
-# Obrigada pela atenção!
+# Obrigada!
 
 # Bibliografia
 
