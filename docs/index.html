@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.483">
+  <meta name="generator" content="quarto-0.9.393">
 
   <meta name="author" content="Caroline Cogo Carneosso   Orientador Prof.&nbsp;Thiago A. N. De Andrade   Coorientador Prof.&nbsp;Cleber Bisognin">
   <title>Ensaios sobre novos modelos incondicionais e de regressão com implementação computacional</title>
@@ -101,6 +101,13 @@
     }
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <script src="index_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="index_files/libs/quarto-html/tabby.min.js"></script>
+  <script src="index_files/libs/quarto-html/popper.min.js"></script>
+  <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -391,13 +398,6 @@
       margin-right: 0; 
     }
   </style>
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/tabby.min.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 </head>
 <body>
   <div class="reveal">
@@ -428,23 +428,25 @@
 <h2>Proposição de novas distribuições baseadas em geradores</h2>
 <p>1.<strong>Exp-G</strong></p>
 <p><br></p>
-<p><strong>T Lehmann I</strong></p>
 <ul>
-<li><span class="math display">\[F(x)=G(x)^\alpha.\]</span></li>
+<li><strong>Lehmann tipo I</strong></li>
 </ul>
+<p><span class="math display">\[F(x)=G(x)^\alpha,\]</span></p>
 <p><br></p>
-<p><strong>T Lehmann II</strong></p>
 <ul>
-<li><span class="math display">\[F(x)=1-\left[1-G(x)\right]^\alpha,\]</span></li>
+<li><strong>Lehmann tipo II</strong></li>
 </ul>
+<p><span class="math display">\[F(x)=1-\left[1-G(x)\right]^\alpha,\]</span></p>
 <p>onde <span class="math inline">\(\alpha&gt;0\)</span>.</p>
 </section>
 <section class="slide level2">
 
 <p>2.<strong>EG-G</strong></p>
+<p><br></p>
 <p><span class="citation" data-cites="cordeiro2013exponentiated">Cordeiro, Ortega, and Cunha (<a href="#/ref-cordeiro2013exponentiated" role="doc-biblioref" onclick="return false;">2013</a>)</span></p>
-<p><span class="math display">\[ F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.\]</span></p>
+<p><span class="math display">\[F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.\]</span></p>
 <p>onde <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span> são dois parâmetros adicionais de forma.</p>
+<p><br></p>
 <ul>
 <li>Se <span class="math inline">\(\alpha= 1\)</span> temos <strong>TL I</strong>.</li>
 <li>Se <span class="math inline">\(\beta= 1\)</span> temos <strong>TL II</strong>.</li>
@@ -453,7 +455,10 @@
 <section class="slide level2">
 
 <p>3.<strong>KW-G</strong></p>
+<p><br></p>
+<p><span class="citation" data-cites="cordeiro2011new">Cordeiro and Castro (<a href="#/ref-cordeiro2011new" role="doc-biblioref" onclick="return false;">2011</a>)</span></p>
 <p><span class="math display">\[ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. \]</span></p>
+<p>onde <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span></p>
 <p><br></p>
 <ul>
 <li>Se <span class="math inline">\(\alpha= 1\)</span> temos <strong>TL II</strong>.</li>
@@ -463,9 +468,11 @@
 <section class="slide level2">
 
 <p>4.<strong>Beta-G</strong></p>
+<p><br></p>
 <p><span class="citation" data-cites="eugene2002beta">Eugene, Lee, and Famoye (<a href="#/ref-eugene2002beta" role="doc-biblioref" onclick="return false;">2002</a>)</span></p>
 <p><span class="math display">\[F(x)=I_{G(x)}(a,b)=\frac{1}{B(a,b)}\int_0^{G(x)}w^{a-1}(1-w)^{b-1}dw\]</span></p>
-<p>para <span class="math inline">\(a&gt;0\)</span> e <span class="math inline">\(b&gt;0\)</span>, one <span class="math inline">\(I_y(a,b) = B_y(a,b)/B(a,b)\)</span> is the incomplete beta function ratio, and <span class="math inline">\(B_y(a,b) = \int_0^y w^{a-1}(1-w)^{b-1}dw\)</span> is the incomplete beta function.</p>
+<p><br></p>
+<p>para <span class="math inline">\(a&gt;0\)</span> e <span class="math inline">\(b&gt;0\)</span>, parâmetros que governam a assimetria e a curtose da distribuição, onde <span class="math inline">\(I_{G(x)}(a,b)\)</span> é a razão da função beta incompleta, e <span class="math inline">\(B(a,b)=\Gamma (a)\Gamma (b)/\Gamma(a+b)\)</span> é a função beta.</p>
 </section>
 <section class="slide level2">
 
@@ -503,9 +510,15 @@
 <section id="novos-modelos-a-serem-explorados" class="slide level2">
 <h2>Novos modelos a serem explorados</h2>
 <ul>
-<li><p>Erf-Wei</p></li>
-<li><p>Erf-Normal</p></li>
-<li><p>Erf- Gamma</p></li>
+<li>Erf-Wei</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Erf-Normal</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Erf- Gamma</li>
 </ul>
 </section>
 <section id="erf-weibull" class="slide level2">
@@ -556,6 +569,9 @@
 
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-cordeiro2011new" class="csl-entry" role="doc-biblioentry">
+Cordeiro, Gauss M, and Mário de Castro. 2011. <span>“A New Family of Generalized Distributions.”</span> <em>Journal of Statistical Computation and Simulation</em> 81 (7): 883–98.
+</div>
 <div id="ref-cordeiro2013exponentiated" class="csl-entry" role="doc-biblioentry">
 Cordeiro, Gauss M, Edwin MM Ortega, and Daniel CC da Cunha. 2013. <span>“The Exponentiated Generalized Class of Distributions.”</span> <em>Journal of Data Science</em> 11 (1): 1–27.
 </div>
