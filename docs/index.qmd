@@ -54,19 +54,20 @@ options(digits = 3)
 ```
 
 
-## Proposição de novas distribuições baseadas em geradores
+# Proposição de novas distribuições baseadas em geradores
 
-@mudholkar1995exponentiated e @gupta1998modeling
+---
 
 1.**Exp-G**
 
+@mudholkar1995exponentiated e @gupta1998modeling
 <br />
+
+$G(x)$ é uma função de distribuição acumulada (fda).
 
 - **Lehmann tipo I**
 
 $$F(x)=G(x)^\alpha,$$  
-
-<br />
 
 - **Lehmann tipo II**
 
@@ -76,41 +77,7 @@ onde $\alpha>0$.
 
 ---
 
-2.**EG-G**
-
-<br />
-
-@cordeiro2013exponentiated
-
-$$F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.$$
-
-onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
-
-<br />
-
-* Se $\alpha= 1$ temos **TL I**.
-* Se $\beta= 1$ temos **TL II**.
-
----
-
-3.**KW-G**
-
-<br />
-
-@cordeiro2011new
-
-$$ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. $$
-onde $\alpha>0$ e $\beta>0$
-
-<br />
-
-
-* Se $\alpha= 1$ temos **TL II**.
-* Se $\beta= 1$ temos **TL I**.
-
----
-
-4.**Beta-G**
+2.**Beta-G**
 
 <br />
 
@@ -124,7 +91,7 @@ para $a>0$ e $b>0$, parâmetros que governam a assimetria e a curtose da distrib
 
 ---
 
-5.**Gamma-G**
+3.**Gamma-G**
 
 <br />
 
@@ -140,7 +107,43 @@ e $\gamma(a,z)=\int_0^{z} t^{a-1}\,\rm{e}^{-t}dt$ denota a função gama incompl
 
 ---
 
+4.**KW-G**
+
+<br />
+
+@cordeiro2011new
+
+$$ F(x)=1-\left[1-G(x)^\alpha\right]^\beta. $$
+onde $\alpha>0$ e $\beta>0$
+
+<br />
+
+
+* Se $\alpha= 1$ temos **Lehmann tipo II**.
+* Se $\beta= 1$ temos **Lehmann tipo I**.
+
+---
+
+5.**EG-G**
+
+<br />
+
+@cordeiro2013exponentiated
+
+$$F(x)=\left\{1-\left[1-G(x)\right]^\alpha\right\}^\beta.$$
+
+onde $\alpha>0$ e $\beta>0$ são dois parâmetros adicionais de forma.
+
+<br />
+
+* Se $\alpha= 1$ temos **Lehmann tipo I**.
+* Se $\beta= 1$ temos **Lehmann tipo II**.
+
+---
+
 6.**Erf-G**
+
+<br />
 
 <br />
 
@@ -149,8 +152,6 @@ DE ANDRADE E @fernandez2020erf
 $$F(x)=\text{Erf}\left[\frac{G(x)}{1-G(x)}\right],$$
 
 <br />
-
-onde $G(x)$ é uma função de distribuição acumulada (fda).
 
 
 ## A nova classe ERF-G e suas vantagens
@@ -225,6 +226,8 @@ $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp
 
 ## Resultados 
 
+::: {.incremental}
+
 * Pacote hospedado no Github 
 
 ```{r, eval= FALSE, echo=TRUE}
@@ -242,6 +245,8 @@ f=erfG::derf(x, dist = "weibull", alpha=0.29, gamma=3)
 plot(x,f,type = "l")
 
 ```
+
+:::
 
 ## Função de Verossimilhança ErF-Weibull
 
