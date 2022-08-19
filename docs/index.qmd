@@ -56,6 +56,8 @@ options(digits = 3)
 
 ## Proposição de novas distribuições baseadas em geradores
 
+@mudholkar1995exponentiated e @gupta1998modeling
+
 1.**Exp-G**
 
 <br />
@@ -213,12 +215,20 @@ Função de taxa de falha
 
 $$h(x)=\dfrac{2\,\alpha\,\beta\, x^{\beta-1}\exp\left\{\alpha x^\beta-\left[\exp(\alpha x^\beta)-1\right]^2\right\}}{\sqrt{\pi}\left\{1-\text{Erf}\left[\exp(\alpha x^\beta)-1\right]\right\}}.$$
 
+---
+
+![](pdfErfWeibull_page-0001.jpg){.absolute top=10 right=190 width="950" height="900"}
+
+---
+
+![](hzrErfWeibull_page-0001.jpg){.absolute top=10 right=190 width="950" height="900"}
+
 ## Resultados 
 
 * Pacote hospedado no Github 
 
-```{r, echo=TRUE}
-#devtools::install_github("https://github.com/AlissonRP/erfG")
+```{r, eval= FALSE, echo=TRUE}
+devtools::install_github("https://github.com/AlissonRP/erfG")
 ```
 
 <br />
@@ -233,7 +243,7 @@ plot(x,f,type = "l")
 
 ```
 
----
+## Função de Verossimilhança ErF-Weibull
 
 ```{r, include=TRUE}
 
@@ -265,6 +275,7 @@ lerfweibull<-function(y,alpha,gama)
 }
 
 y<-rerfweibull(n=100,alpha=0.2,gama=2.0)
+
 # plot(density(y))
 
 
