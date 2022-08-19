@@ -233,6 +233,69 @@ plot(x,f,type = "l")
 
 ```
 
+---
+
+```{r, include=TRUE}
+
+library("plotly")
+library("magrittr")
+library("ggplot2")
+library("magrittr") 
+library("ggfortify")
+
+rerfweibull<- function(n,alpha,gama){
+  u <- runif(n)
+  k <- qnorm((u+1)/2)/(sqrt(2)+qnorm((u+1)/2))
+  y <- (-log(1-k)/alpha)^(1/gama)
+  return(y)
+}
+#erf weibull density
+derfweibull <- function(x, alpha, gama) {
+  g = alpha*gama*x^(gama-1)*exp(-alpha*x^gama)
+  G = 1- exp(-alpha*x^gama)
+  f = 2*g*exp(-(G/(1-G))^2)/(sqrt(pi)*(1-G)^2)
+  return(f)
+}
+#log-likelihoo erf weibull
+lerfweibull<-function(y,alpha,gama)
+{
+  #like<-sum(log(derfweibull(x=y,alpha,gama)))
+  like<-prod((derfweibull(x=y,alpha,gama)))
+  return(like)
+}
+
+# y<-rerfweibull(n=100,alpha=0.2,gama=2.0)
+# plot(density(y))
+
+
+#alpha<-seq(0.01,2,length.out=50)
+#gama<-seq(1.81,1.815,length.out=50)
+alpha<-seq(0.01,2,length.out=50)
+gama<-seq(2.51,2.815,length.out=50)
+r<-length(gama)
+vero<-matrix (rep(0,r^2),r)
+for (i in 1:r){
+  for (j in 1:r){
+    vero[i,j]<-lerfweibull(y,alpha[i],gama[j])
+  }
+}
+fig <- plot_ly(x=~alpha,y=~gama,z=~vero)
+fig<-fig %>% add_surface()
+fig <- fig %>% layout(
+  title = "Função de Verossimilhança ErF-Weibull",
+  scene = list(
+    xaxis = list(title = "alpha"),
+    yaxis = list(title = "gama"),
+    zaxis = list(title = "Verossimilhança")
+  ))
+fig
+
+```
+
+
+
+
+
 # Obrigada!
 
 # Bibliografia
