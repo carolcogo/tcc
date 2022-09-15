@@ -171,7 +171,7 @@ RefManageR::PrintBibliography(referencias)
 ---
 class: center, middle
 
-# Obrigada pela atenção!
+# Obrigada pela atenção! Dúvidas?
 
 
 ```{r, eval=False}
