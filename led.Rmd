@@ -173,6 +173,7 @@ class: center, middle
 
 # Obrigada pela atenção! Dúvidas?
 
+---
 
 ```{r, eval=False}
 
@@ -191,5 +192,3 @@ lines(x,pdf_Erf_We(c(alpha=0.9,lambda=0.9),x=x),lwd=2,lty=4)
 legend(2,1.4,c(expression(alpha~"=0.29 "~beta~"=3"),expression(alpha~"=0.231 "~beta~"=2.1"),               expression(alpha~"=0.3"~beta~"=0.5"),expression(alpha~"=0.9 "~beta~"=0.9")),lty=c(1,2,3,4),lwd=c(2,2,2,2),bty="n",
        cex = 1.2)
 ```
-
-
